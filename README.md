@@ -4,6 +4,10 @@ A Flutter health app that connects (fake) laboratory results from [Cloud Firesto
 
 ![demo](demo.gif)
 
+## What?
+
+Example code as given for the UT Austin [AI Health Spring 2020 course][ai-health-course]
+
 Labs displayed are:
 
 * complete blood count (CBC)
@@ -34,10 +38,6 @@ Within each lab, only a few results are shown. These are:
 | creat | Creatinine          | _double_ |
 |  glc  | Glucose             |  _int_   |
 
-## Getting Started
-
-Watch the video (link to be provided). In GitHub, the master branch corresponds to the final product. Branches also exist for the app as generated during 101 and 102 segments of this lecture.
-
 ## Relevant Links
 
 * 101
@@ -51,8 +51,18 @@ Watch the video (link to be provided). In GitHub, the master branch corresponds 
   * [Firebase for Flutter][firebase]
   * [JSON and serialization][json]
 
-showing  dynamically loaded for demonstration at the UT Austin [AI Health Spring 2020 course](https://yingding.ischool.utexas.edu/INF385TAIHealthSpring2020.html)
+## Getting Started
 
+Watch the video (link to be provided). In GitHub, the master branch corresponds to the final product. Branches also exist for the app as generated during 101 and 102 segments of this lecture.
+
+Note that if you clone this repository, you will want to
+
+1. Customize the package name to your own
+2. Create your own [Firebase][firebase] repository, taking the relevant steps to [setup secure rules][secure-db] for your new database
+3. Follow the relevant [Platform-specific device configuration][firebase] to add `google-services.json` or `GoogleService-Info.plist` to your app
+4. If this is an open-source project, add `android/app/google-services.json` and `ios/Runner/GoogleService-Info.plist` to your `.gitignore` file
+
+[ai-health-course]: https://yingding.ischool.utexas.edu/INF385TAIHealthSpring2020.html
 [firestore]: https://firebase.google.com/docs/firestore
 [dart]: https://dart.dev/
 [flutter]: https://flutter.dev/
@@ -60,4 +70,5 @@ showing  dynamically loaded for demonstration at the UT Austin [AI Health Spring
 [custom-painter]: https://zocada.com/drawing-custom-shapes-in-flutter-using-custompainter/
 [pub]: https://pub.dev/
 [firebase]: https://codelabs.developers.google.com/codelabs/flutter-firebase/#6
+[secure-db]: https://dev.to/jamal_moir/firestore-rules-examples-must-know-patterns-to-secure-your-data-bm1
 [json]: https://flutter.dev/docs/development/data-and-backend/json#serializing-json-using-code-generation-libraries
