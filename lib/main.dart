@@ -12,11 +12,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
         textTheme: TextTheme(body1: TextStyle(fontSize: 36)),
       ),
-      // home: HomeScreen(),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => HomeScreen(),
-      },
+      home: HomeScreen(),
     );
   }
 }
