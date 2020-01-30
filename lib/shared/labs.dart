@@ -1,80 +1,66 @@
-import 'package:ai_health_demo/services/services.dart';
-import 'package:ai_health_demo/shared/shared.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class LabBMP extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var _bmp = Provider.of<ModelBMP>(context);
-    // return Loading();
-
-    if (_bmp != null) {
-      return Padding(
-        padding: EdgeInsets.all(8.0),
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              child: Table(
-                border: TableBorder(
-                    horizontalInside: BorderSide(width: 4.0),
-                    verticalInside: BorderSide(width: 4.0)),
-                children: [
-                  TableRow(
-                    children: [
-                      _labText('${_bmp.na}'),
-                      _labText('${_bmp.cl}'),
-                      _labText('${_bmp.bun}'),
-                    ],
-                  ),
-                  TableRow(
-                    children: [
-                      _labText('${_bmp.k}'),
-                      _labText('${_bmp.co2}'),
-                      _labText('${_bmp.creat}'),
-                    ],
-                  ),
-                ],
-              ),
+    return Padding(
+      padding: EdgeInsets.all(8.0),
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: Table(
+              border: TableBorder(
+                  horizontalInside: BorderSide(width: 4.0),
+                  verticalInside: BorderSide(width: 4.0)),
+              children: [
+                TableRow(
+                  children: [
+                    _labText('na'),
+                    _labText('cl'),
+                    _labText('bun'),
+                  ],
+                ),
+                TableRow(
+                  children: [
+                    _labText('k'),
+                    _labText('co2'),
+                    _labText('creat'),
+                  ],
+                ),
+              ],
             ),
-            _labTextWithV('${_bmp.glc}'),
-          ],
-        ),
-      );
-    }
-    return Loading();
+          ),
+          _labTextWithV('glc'),
+        ],
+      ),
+    );
   }
 }
 
 class LabCBC extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var _cbc = Provider.of<ModelCBC>(context);
-
-    if (_cbc != null) {
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          _labTextWithV('${_cbc.wbc}', Colors.blue, true),
-          IntrinsicWidth(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                _labText('${_cbc.hb}'),
-                Divider(
-                  color: Colors.black,
-                  thickness: 4.0,
-                ),
-                _labText('${_cbc.hct}'),
-              ],
-            ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        _labTextWithV('wbc', Colors.blue, true),
+        IntrinsicWidth(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              _labText('hb'),
+              Divider(
+                color: Colors.black,
+                thickness: 4.0,
+              ),
+              _labText('hct'),
+            ],
           ),
-          _labTextWithV('${_cbc.plt}', Colors.orange),
-        ],
-      );
-    }
-    return Loading();
+        ),
+        _labTextWithV('plt', Colors.orange),
+      ],
+    );
   }
 }
 
