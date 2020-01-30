@@ -19,9 +19,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  # use to connect to cloud backend
   cloud_firestore: ^0.13.0+1
   provider: ^4.0.2
-  json_serializable: ^3.2.5
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -31,7 +32,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  # used to build/update data model
   build_runner: ^1.7.3
+  json_serializable: ^3.2.5
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
